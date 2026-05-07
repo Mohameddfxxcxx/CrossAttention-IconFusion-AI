@@ -92,7 +92,7 @@ This repository implements a **complete, research-grade generative pipeline** fo
 2. A **cross-attention block** at the 16×16 resolution lets every spatial position query the condition tokens — the same primitive used in Stable Diffusion's UNet.
 3. An **AdaIN block** is exposed at inference time to perform *training-free* content × style recombination.
 
-**The result.** **97.83 %** Conditional Colour Accuracy, sharp recognisable polygons (circles, squares, triangles, stars, pentagons, hexagons), AdaIN that actually mixes channel statistics, and an interpretable cross-attention map that binds each condition token to its image region.
+**The result.** **98.33 %** Conditional Colour Accuracy, sharp recognisable polygons (circles, squares, triangles, stars, pentagons, hexagons), AdaIN that actually mixes channel statistics, and an interpretable cross-attention map that binds each condition token to its image region.
 
 ---
 
@@ -307,11 +307,11 @@ Full kernel log saved to [`results/kaggle_kernel.log`](results/kaggle_kernel.log
 | PyTorch | 2.5.1+cu121 | log |
 | Epochs | 40 | `results/history.json` |
 | Train time | **~4.5 min** | log |
-| Test loss (β-VAE ELBO) | **0.0181** | `results/metrics.json` |
-| Test recon (½MSE + ½L1) | **0.0143** | `results/metrics.json` |
-| KL divergence | 0.0372 nats | `results/metrics.json` |
-| **Conditional Colour Accuracy** | **97.83 %** (n=600) | `results/metrics.json` |
-| **Cross-attention CCA gain** | **+74.7 pp** (12.17 % → 86.83 %) | `results/ablation.json` |
+| Test loss (β-VAE ELBO) | **0.0183** | `results/metrics.json` |
+| Test recon (½MSE + ½L1) | **0.0138** | `results/metrics.json` |
+| KL divergence | 0.0447 nats | `results/metrics.json` |
+| **Conditional Colour Accuracy** | **98.33 %** (n=600) | `results/metrics.json` |
+| **Cross-attention CCA gain** | **+66.2 pp** (12.83 % → 79.00 %) | `results/ablation.json` |
 
 </div>
 
@@ -379,9 +379,9 @@ We trained two decoder variants under a **matched 6-epoch budget**:
 
 | Variant | Conditional Colour Accuracy |
 |---|---:|
-| Decoder *with* cross-attention | **86.83 %** |
-| Decoder *without* cross-attention | 12.17 % |
-| **Δ** | **+74.7 pp** |
+| Decoder *with* cross-attention | **79.00 %** |
+| Decoder *without* cross-attention | 12.83 % |
+| **Δ** | **+66.2 pp** |
 
 Cross-attention is the dominant contributor to compositional fidelity — without it, the model collapses to an unconditioned mean.
 
@@ -403,18 +403,18 @@ Errors concentrate on the inner shape of *nested* compositions where the inner r
 
 ```json
 {
-  "test_loss": 0.0181,
-  "recon_mse": 0.0143,
-  "kl": 0.0372,
-  "conditional_color_accuracy": 0.9783
+  "test_loss": 0.0183,
+  "recon_mse": 0.0138,
+  "kl": 0.0447,
+  "conditional_color_accuracy": 0.9833
 }
 ```
 
 ```json
 {
-  "no_attention_CCA":   0.1217,
-  "with_attention_CCA": 0.8683,
-  "delta":              0.7467
+  "no_attention_CCA":   0.1283,
+  "with_attention_CCA": 0.7900,
+  "delta":              0.6617
 }
 ```
 

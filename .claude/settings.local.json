@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip --version)",
+      "Bash(python *)",
+      "PowerShell(Set-ExecutionPolicy *)",
+      "Bash(exit 1)",
+      "Bash(rm -f _build_notebook.py _patch_nb.py _patch_quality.py _patch_rotation.py _patch_v6.py _validate.py _pull_kaggle.py)",
+      "Bash(rm -rf _kaggle_push _kaggle_output)",
+      "PowerShell(git config *)",
+      "Bash(rm -f _patch_v6.py _patch_v7.py _make_assets.py)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git check-ignore *)",
+      "Bash(git commit -m 'Initial release: Cond-VAE with cross-attention + AdaIN style transfer *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://github.com/Mohameddfxxcxx/CrossAttention-IconFusion-AI)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://raw.githubusercontent.com/Mohameddfxxcxx/CrossAttention-IconFusion-AI/main/README.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/Mohameddfxxcxx/CrossAttention-IconFusion-AI/main/README.md)",
+      "Bash(curl -s -o /dev/null -w \"kernel page: %{http_code}\\\\n\" https://www.kaggle.com/code/mohamedelsadek44/geometric-icons-cond-vae)",
+      "Bash(curl -s -o /dev/null -w \"embedded:    %{http_code}\\\\n\" https://www.kaggle.com/embed/mohamedelsadek44/geometric-icons-cond-vae)",
+      "Bash(rm -f _patch_v8.py _make_assets.py _pull_kaggle.py)",
+      "Bash(git commit -m 'Sync repo to v8 \\(the public Kaggle release\\) *)"
+    ]
+  }
+}

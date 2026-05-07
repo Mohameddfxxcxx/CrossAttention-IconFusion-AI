@@ -52,10 +52,10 @@ The notebook was executed end-to-end on **Kaggle's Tesla P100-PCIE-16GB GPU** (4
 
 | Metric | Value |
 |---|---|
-| Test loss (β-VAE ELBO) | 0.0181 |
-| Reconstruction (½ MSE + ½ L1) | 0.0143 |
-| KL divergence | 0.037 nats (no posterior collapse) |
-| **Conditional Colour Accuracy** (outer-colour, n=600) | **97.83 %** |
+| Test loss (β-VAE ELBO) | 0.0183 |
+| Reconstruction (½ MSE + ½ L1) | 0.0138 |
+| KL divergence | 0.045 nats (no posterior collapse) |
+| **Conditional Colour Accuracy** (outer-colour, n=600) | **98.33 %** |
 
 **Five required samples** are rendered to `samples/final_samples.png` and a 64-image bonus gallery to `samples/gallery_8x8.png`. The five prompts span the full design space (single + nested, every colour, every shape, every background) and the model produces clean, prompt-faithful icons in each case — circles, stars, squares, hexagons and pentagons all render with correct colour, correct nested inner shape, and correct background.
 
@@ -63,9 +63,9 @@ The notebook was executed end-to-end on **Kaggle's Tesla P100-PCIE-16GB GPU** (4
 
 | Decoder | Conditional Colour Accuracy |
 |---|---|
-| with cross-attention | **86.83 %** |
-| without cross-attention | 12.17 % |
-| **Δ** | **+74.7 pp** |
+| with cross-attention | **79.00 %** |
+| without cross-attention | 12.83 % |
+| **Δ** | **+66.2 pp** |
 
 This isolates the cross-attention block as the dominant contributor to compositional fidelity — without it the model produces colour-confused outputs.
 
