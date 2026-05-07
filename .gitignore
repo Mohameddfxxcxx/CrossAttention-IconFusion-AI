@@ -66,3 +66,6 @@ Thumbs.db
 
 # Always include the proof-of-execution Kaggle log
 !results/kaggle_kernel.log
+
+# Claude Code editor settings
+.claude/
