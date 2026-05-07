@@ -1,0 +1,68 @@
+# ────────────────────────────────────────────────────────────
+# Python
+# ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ────────────────────────────────────────────────────────────
+# Jupyter / IPython
+# ────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# ────────────────────────────────────────────────────────────
+# Trained model checkpoints (large; available from Kaggle kernel)
+# ────────────────────────────────────────────────────────────
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# ────────────────────────────────────────────────────────────
+# Kaggle staging / output dirs (build artefacts)
+# ────────────────────────────────────────────────────────────
+_kaggle_push/
+_kaggle_output/
+
+# ────────────────────────────────────────────────────────────
+# Local scratch / build helpers (not deliverables)
+# ────────────────────────────────────────────────────────────
+_build_*.py
+_patch_*.py
+_pull_*.py
+_make_*.py
+_validate.py
+
+# ────────────────────────────────────────────────────────────
+# IDE / editor
+# ────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ────────────────────────────────────────────────────────────
+# OS-specific
+# ────────────────────────────────────────────────────────────
+*.log
+*.tmp
+*.pid
+
+# Always include the proof-of-execution Kaggle log
+!results/kaggle_kernel.log

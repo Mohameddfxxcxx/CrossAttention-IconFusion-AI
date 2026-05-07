@@ -1,0 +1,21 @@
+# Core
+torch>=2.0
+torchvision>=0.15
+
+# Data / numerics
+numpy>=1.24
+pandas>=2.0
+Pillow>=10.0
+scikit-learn>=1.3
+
+# Plotting / progress
+matplotlib>=3.7
+tqdm>=4.65
+
+# Demo app
+gradio>=4.0
+
+# Notebook tooling (only needed if rebuilding the notebook from sources)
+nbformat>=5.10
+ipykernel>=6.25
+jupyterlab>=4.0
